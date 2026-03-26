@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-index</title>
+    <style>
+        div{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+        }
+        #box1{
+            top: 50px;
+            left: 50px;
+            background-color: red;
+            z-index: 1;
+        }
+        #box2{
+            top:100px;
+            left: 100px;
+            background-color: blue;
+            z-index:2;
+        }
+        #box3{
+            top: 150px;
+            left: 150px;
+            background-color: blueviolet;
+            z-index: 3;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div> 
+    <div id="box3"></div>   
+</body>
+</html>

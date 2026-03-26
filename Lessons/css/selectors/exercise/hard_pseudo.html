@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-classes and Pseudo-Elements</title>
+    <style>
+        .hover-box{
+            background-color: lightgray;
+            padding: 20px;
+           
+        }
+        .hover-box:hover{
+            background-color: blue;
+            color: white;
+        }
+        input:focus{
+            background-color: yellow; 
+           display: flex;
+        }
+        .input{
+            font-weight: 400px;
+            height: 50px;
+            font-size: 16px;
+            padding: 8px;
+        }
+        .fancy-paragraph::first-letter{
+            font-size: 2em;
+            color: red;
+            font-weight: bold;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <h1>Pseudo-Classes and Pseudo-Elements</h1>
+
+    <h2>Hover Pseudo-Class</h2>
+    <div class="hover-box">Hover over me!</div>
+
+    <h2>Focus Pseudo-Class</h2>
+    <input type="text"placeholder="Click me and type something">
+
+    <h2>First-Letter Pseudo-Element</h2>
+    <p class="fancy-paragraph">This is a paragraph with fancy styling.Notice how the first letter is bigger and red.</p>
+
+    <h2>Before pseudo-Element</h2>
+    <ul class="color-list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item3</li>
+    </ul>
+    <h2>After Pseudo-Element and Active Pseudo-Class</h2>
+    <button class="interactive-btn">Click me!</button>
+    <p><em>Note:The button turns red when clicked (active state)</em></p>
+    
+</body>
+</html>

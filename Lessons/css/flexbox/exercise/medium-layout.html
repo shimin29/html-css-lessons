@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Application Layout</title>
+    </head>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .container header {
+            height: 80px;
+            width: 100%;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .aside {
+            display: flex;
+            flex-direction: column;
+            width: 15%;
+            background-color: #ddd;
+            padding: 20px;
+            height: 80vh;
+        }
+        .aside ul {
+            padding-top: 10px;
+        }
+        .aside ul li {
+            list-style-type: none;
+            padding-top: 5px;
+        }
+        .main-content {
+            padding: 20px;
+        }
+        .footer {
+            height: 60px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+        }
+        .main-content p {
+            margin-top: 10px;
+        }
+        .main{
+            display: flex;
+            flex-direction: row;
+        }
+    </style>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Application Layout</h1>
+            </header>
+            <div class="main">
+                <div class="aside">
+                    <h1>Navigation</h1>
+                    <ul>
+                        <li>Dashboard</li>
+                        <li>Projects</li>
+                        <li>Tasks</li>
+                        <li>Calender</li>
+                        <li>Reports</li>
+                        <li>Settings</li>
+                    </ul>
+                </div>
+
+                <div class="main-content">
+                <h2>Main Content Area</h2>
+                <p>This is a sidebar layout with a flexible main content area created using Flexbox.</p>
+                <p>The header and footer span the full width of the page,while the sidebar and main content are positioned side by side.</p>
+                <p>Lorem ipsum dolor ait amet,consectetur adipiscing elit.Sed ultricies velit at enim tempor,in convalls velit pulvinar.Cras vitae turpris ligula.Suspendisse at libero sed nisi rhoncus egestas . Curabitur Varius,dolor sit amet consequat aliquam, massa sem congue massa mauris nonleo.</p>
+            </div>
+                <div class="footer">
+                    <h4>&copy;2026 Application Layout. All rights reserved.</h4>
+                </div>
+            </div>
+    </body>
+</html>

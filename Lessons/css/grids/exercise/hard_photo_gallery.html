@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Complex Photo Gallery</title>
+        <style>
+            .gallery-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(4, 150px);
+                gap: 10px;
+                padding: 20px;
+                font-family: sans-serif;
+                font-weight: bold;
+                text-align: center;
+                justify-content: center;
+            }
+            .photo {
+                display: flex;
+                justify-content: center; 
+                align-items: center; 
+            }
+
+            .photo1 {
+                grid-column: 1 / 3;
+                grid-row: 1 / 3;
+                background-color: rgb(255, 70, 8);
+                border: 2px solid black;
+            }
+
+            .photo2 {
+                grid-column: 3 / 4;
+                grid-row: 1 / 2;
+                background-color: rgb(7, 164, 242);
+                border: 2px solid black;
+            }
+
+            .photo3 {
+                grid-column: 4 / 5;
+                grid-row: 1 / 2;
+                background-color: rgb(47, 179, 91);
+                border: 2px solid black;
+            }
+
+            .photo4 {
+                grid-column: 3 / 4;
+                grid-row: 2 / 3;
+                background-color: yellow;
+                border: 2px solid black;
+            }
+
+            .photo5 {
+                grid-column: 4 / 5;
+                grid-row: 2 / 3;
+                background-color: plum;
+                border: 2px solid black;
+            }
+
+            .photo6 {
+                grid-column: 1 / 2;
+                grid-row: 3 / 4;
+                background-color: lightseagreen;
+                border: 2px solid black;
+            }
+
+            .photo7 {
+                grid-column: 2 / 4;
+                grid-row: 3 / 4;
+                background-color: orange;
+                border: 2px solid black;
+            }
+
+            .photo8 {
+                grid-column: 1 / 4;
+                grid-row: 4 / 5;
+                background-color: rgb(77, 96, 115);
+                border: 2px solid black;
+                color: white;
+            }
+
+            .photo9 {
+                grid-column: 4 / 5;
+                grid-row: 3 / 5;
+                background-color: lightgray;
+                border: 2px solid black;
+            }
+            .gallery-container {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="gallery-grid">
+            <div class="photo photo1">Photo 1</div>
+            <div class="photo photo2">Photo 2</div>
+            <div class="photo photo3">Photo 3</div>
+            <div class="photo photo4">Photo 4</div>
+            <div class="photo photo5">Photo 5</div>
+            <div class="photo photo6">Photo 6</div>
+            <div class="photo photo7">Photo 7</div>
+            <div class="photo photo8">Photo 8</div>
+            <div class="photo photo9">Photo 9</div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Sticky Navigation Exercise</title>
+        <!-- Load your css file here -->
+    </head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            letter-spacing: 2px;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: #555;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav li {
+            margin: 0;
+        }
+
+        nav a {
+            display: block;
+            padding: 15px 25px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background: #ff9800;
+            color: #000;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            flex-direction: column;
+            padding-top: 120px;
+        }
+
+        #section1 {
+            background-color: rgb(17, 241, 126);
+        }
+
+        #section2 {
+            background: #2a9d8f;
+            color:black;
+        }
+
+        #section3 {
+            background: #316072;
+            color:black;
+        }
+
+        #section4 {
+            background: #e9c46a;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        h2 {
+            border-bottom: 5px solid #fff;
+            margin-bottom: 50px;
+            padding-bottom: 10px;
+        }
+    </style>
+    <body>
+        <header>
+            <h1>Website Title</h1>
+        </header>
+
+        <nav class="sticky-nav">
+            <ul>
+                <li><a href="#section1">Section 1</a></li>
+                <li><a href="#section2">Section 2</a></li>
+                <li><a href="#section3">Section 3</a></li>
+            </ul>
+        </nav>
+
+        <section id="section1" class="content-section">
+            <h2>Section 1</h2>
+            <p>Content for section 1...</p>
+        </section>
+
+        <section id="section2" class="content-section">
+            <h2>Section 2</h2>
+            <p>Content for section 2...</p>
+        </section>
+
+        <section id="section3" class="content-section">
+            <h2>Section 3</h2>
+            <p>Content for section 3...</p>
+        </section>
+
+        <footer>
+            <p>Footer content</p>
+        </footer>
+    </body>
+</html>
