@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>My Bootstrap Landing Page</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    </head>
+    <body>
+        <div id="navbarContainer" class="container-fluid bg-dark">
+            <nav class="navbar navbar-expand-lg pt-0">
+                <div class="container navbar-dark">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <a href="#" class="navbar-brand">Company Name</a>
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item active">
+                                <a href="#" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Features</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Testimonials</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <section class="hero-section">
+            <div class="container-fluid bg-light">
+                <div class="container text-center py-4">
+                    <h1 class="display-3">Welcome To Our Company</h1>
+                    <p class="fs-4">provide innovation solutions for all your business needs</p>
+                    <button class="btn btn-primary">Get Started</button>
+                </div>
+            </div>
+        </section>
+        <section class="our-features">
+            <div class="container pb-5">
+                <h2 class="text-center py-5">Our Features</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card w-100 text-center">
+                            <i class="bi bi-graph-up display-3 text-primary"></i>
+                            <div class="card-body text-center">
+                                <h5 class="card-title fs-3">Advanced Analytics</h5>
+                                <p class="card-text">Our platform detailed analytics to help you make informed decisions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card w-100 text-center">
+                            <i class="bi bi-shield-check display-3 text-primary"></i>
+                            <div class="card-body text-center">
+                                <h5 class="card-title fs-3">Secure platform</h5>
+                                <p class="card-text">Your data is protected with state-of-the-art security measures.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card w-100 text-center">
+                            <i class="bi bi-headset display-3 text-primary"></i>
+                            <div class="card-body text-center">
+                                <h5 class="card-title fs-3">24/7 Support</h5>
+                                <p class="card-text">Our customer support team is available round the clock to assist you.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container-fluid bg-light py-5">
+                <div class="container">
+                    <h2 class="text-center pb-4">What Our Clients Say</h2>
+                    <div class="alert alert-success" role="alert">
+                        <h3>Amazing Service!</h3>
+                        <p>"I've been using this company's services for over a year now, and I'm extremely satisfied with their performance.Their customer support is outstanding!"</p>
+                        <hr class="border-dark" />
+                        <p>--John Doe,CEO of Example Corp.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="Contact-Us">
+            <div class="container">
+                <h2 class="text-center py-5">Contact Us</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control my-2" id="name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control my-2" id="email" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Mesasage">Message:</label>
+                        <textarea type="Message" class="form-control my-2" id="Message" rows="4"></textarea>
+                    </div>
+                    <div class="d-flex justify-content-left my-3">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <footer>
+            <div class="container-fluid bg-dark py-3">
+                <div class="container text-center">
+                    <div class="d-flex justify-content-center pb-2">
+                        <i class="bi bi-google text-white px-2"></i>
+                        <i class="bi bi-facebook text-white px-2"></i>
+                        <i class="bi bi-twitter-x text-white px-2"></i>
+                        <i class="bi bi-instagram text-white px-2"></i>
+                    </div>
+                    <p class="text-white text-center">&copy; 2026 TechVision. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

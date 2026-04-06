@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout Columns</title>
+    <style>
+        body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.card h2 {
+  color:skyblue;
+}
+
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+    </style>
+</head>
+<body>
+    <h1>Responsive Layout Columns</h1>
+    <div class="grid">
+    <div class="card">
+      <img src="https://hips.hearstapps.com/hmg-prod/images/champagne-beach-espiritu-santo-island-vanuatu-royalty-free-image-1655672510.jpg?crop=0.668xw:1.00xh;0.167xw,0&resize=640:*" alt="">
+      <h2>Article One</h2>
+      <p>Lorem ipsum dolor sit amet,consectetur adipiscing elit.Nuilam ini dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisi tempor.
+                Suspendisse dictum feugia nisl ut dapibus.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://idsb.tmgrup.com.tr/ly/uploads/images/2024/12/08/358330.jpg" alt="">
+      <h2>Article Two</h2>
+      <p>Lorem ipsum dolor sit amet,consectetur adipiscing elit.Nuilam ini dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisi tempor.
+                Suspendisse dictum feugia nisl ut dapibus.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://image-tc.galaxy.tf/wiwebp-77oehjbfcav8rbb65k1r5ylp/golden-hour-view-of-penang-bridge-across-still-waters.webp" alt="">
+      <h2>Article Three</h2>
+      <p>Lorem ipsum dolor sit amet,consectetur adipiscing elit.Nuilam ini dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisi tempor.
+                Suspendisse dictum feugia nisl ut dapibus.</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
