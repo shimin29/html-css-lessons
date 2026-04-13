@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Iron Man Wiki</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+            :root {
+                --stark-blue: #00d4ff;
+                --dark-bg: #0b0e14;
+                --card-bg: #1a1f26;
+            }
+
+            body {
+                background-color: var(--dark-bg);
+                color: #ffffff;
+                font-family: "Roboto", sans-serif;
+                overflow-x: hidden;
+            }
+
+            /* Navbar Styling */
+            .navbar {
+                border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+            }
+
+            .navbar-brand {
+                font-family: "Orbitron", sans-serif;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+
+            .nav-link {
+                font-size: 20px;
+                color: white !important;
+                transition: all 0.3s ease;
+                font-family: "Orbitron", sans-serif;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+
+            .nav-link:hover {
+                color: var(--stark-blue) !important;
+                text-shadow: 0 0 10px var(--stark-blue);
+            }
+
+            /* Hero Section */
+            .hero-section {
+                height: 60vh;
+                background:
+                    linear-gradient(rgba(31, 0, 63, 0.103), var(--dark-bg)),
+                    url("https://cdn.marvel.com/content/2x/002irm_ons_mas_mob_01_0.jpg") center/cover;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+
+            /* Pulsing Header */
+            @keyframes iron-glow {
+                0%,
+                100% {
+                    color: #00aacc;
+                    text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+                }
+
+                50% {
+                    color: var(--stark-blue);
+                    text-shadow:
+                        0 0 20px var(--stark-blue),
+                        0 0 40px var(--stark-blue);
+                }
+            }
+
+            .tony-stark-header {
+                font-family: "Orbitron", sans-serif;
+                font-size: clamp(3rem, 10vw, 6rem);
+                font-weight: bold;
+                text-transform: uppercase;
+                animation: iron-glow 3s ease-in-out infinite;
+            }
+            .robert-header {
+                font-family: "Orbitron", sans-serif;
+                font-size: 50px;
+                font-weight: bold;
+                text-transform: uppercase;
+                animation: iron-glow 3s ease-in-out infinite;
+            }
+
+            .glow-text {
+                color: var(--stark-blue);
+                text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+            }
+
+            
+            .movie-card {
+                background-color: var(--card-bg);
+                border: 1px solid #333;
+                transition: all 0.4s ease;
+                color: white;
+                overflow: hidden;
+            }
+
+            .movie-card:hover {
+                border-color: var(--stark-blue);
+                transform: translateY(-10px);
+                box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+            }
+
+            .card-img-top {
+                height: 400px;
+                object-fit: cover;
+                border-bottom: 1px solid #333;
+            }
+
+            .card-title {
+                color: var(--stark-blue);
+                font-family: "Orbitron", sans-serif;
+                font-size: 1.1rem;
+                font-weight: bold;
+            }
+
+            .card-text {
+                font-style: italic;
+            }
+
+            .btn {
+                background-color: var(--stark-blue);
+                color: black;
+                border-color: var(--stark-blue);
+                box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+            }
+
+            .btn:hover {
+                color: var(--stark-blue);
+            }
+
+            .full-width-hr {
+                width: 100vw;
+                position: relative;
+                left: 50%;
+                right: 50%;
+                margin-left: -50vw;
+                margin-right: -50vw;
+                opacity: 80%;
+            }
+
+            .info-card {
+                background: rgba(0, 20, 40, 0.6);
+                border-left: 5px solid #0dcaf0 !important;
+                backdrop-filter: blur(5px);
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            .info-card strong {
+                font-family: "Courier New", Courier, monospace;
+                text-transform: uppercase;
+            }
+
+            .social {
+                display: flex;
+                align-items: center;
+            }
+            .container-actor a {
+                color: var(--stark-blue);
+                text-decoration: none;
+                text-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+            }
+            .form-group {
+                margin-bottom: 15px;
+            }
+            #contact h1 {
+                color: var(--stark-blue);
+                text-shadow: 0 0 15px var(--stark-blue);
+                font-family: "Orbitron", sans-serif;
+            }
+
+            #contact label {
+                color: var(--stark-blue);
+                font-family: "Orbitron", sans-serif;
+                letter-spacing: 1px;
+            }
+
+            #contact .form-control {
+                background-color: #0b0e14;
+                color: white;
+                border: 1px solid #00d4ff;
+            }
+
+            #contact .form-control::placeholder {
+                color: #00d4ff;
+                opacity: 0.6;
+            }
+
+            #contact .form-control:focus {
+                background-color: #0b0e14;
+                color: white;
+                border-color: #00d4ff;
+                box-shadow: 0 0 10px #00d4ff;
+            }
+
+            #contact button {
+                background-color: #00d4ff;
+                border: none;
+                color: black;
+                font-family: "Orbitron", sans-serif;
+                transition: 0.3s;
+            }
+
+            #contact button:hover {
+                box-shadow: 0 0 20px #00d4ff;
+                transform: translateY(-2px);
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+            <div class="container">
+                <a href="#home" class="navbar-brand glow-text fs-2">Avengers Info</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="#film" class="nav-link">Film</a></li>
+                        <li class="nav-item"><a href="#robert" class="nav-link">Robert</a></li>
+                        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <header class="hero-section" id="home">
+            <div class="container">
+                <h1 class="tony-stark-header">Tony Stark</h1>
+            </div>
+        </header>
+
+        <main class="container my-5">
+            <section class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="info-card p-4 border border-info rounded shadow">
+                            <h3 class="text-info mb-3" style="letter-spacing: 2px"><b>INFORMATION :</b></h3>
+                            <ul class="list-unstyled text-light">
+                                <li class="mb-2"><strong class="text-info">SUBJECT:</strong> Anthony 'Tony' Stark</li>
+                                <li class="mb-2"><strong class="text-info">CODENAME:</strong> "Iron Man"</li>
+                                <li class="mb-2"><strong class="text-info">STATUS:</strong> <span class="text-danger">Heroic Sacrifice (2023)</span></li>
+                            </ul>
+                            <hr class="border-info opacity-50" />
+                            <p class="text-secondary small italic">
+                                <strong>Key Contribution:</strong> Inventor of the Mark suit series and primary benefactor of the Avengers Initiative. Tony Stark’s evolution from a cold-hearted industrialist to the universe’s savior remains the cornerstone of modern heroic history.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <br id="film" />
+            <hr class="full-width-hr border border-light" />
+
+            <section>
+                <h2 class="text-center mt-5 mb-5 glow-text font-orbitron" style="font-family: &quot;Orbitron&quot;">The 9-Film Legacy</h2>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
+                    <div class="col">
+                        <div class="card h-100 movie-card">
+                            <img src="https://static.wikia.nocookie.net/marvelcinematicuniverse/images/1/1e/Iron_Man_Official_Poster.jpg" class="card-img-top" alt="Iron Man" />
+                            <div class="card-body">
+                                <h5 class="card-title">Iron Man (2008)</h5>
+                                <p class="card-text text-secondary small">The beginning of the MCU. Tony builds the Mark I in a cave to survive.</p>
+                                <a href="https://www.imdb.com/title/tt0371746/?ref_=ls_t_1" class="btn">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100 movie-card">
+                            <img src="https://static.wikia.nocookie.net/marveldatabase/images/e/ed/Iron_Man_2_poster.jpg/revision/latest/scale-to-width-down/1000?cb=20190309193419" class="card-img-top" alt="Iron Man 2" />
+                            <div class="card-body">
+                                <h5 class="card-title">Iron Man 2 (2010)</h5>
+                                <p class="card-text text-secondary small">Tony faces Ivan Vanko while dealing with palladium poisoning.</p>
+                                <a href="https://www.imdb.com/title/tt1228705/?ref_=ls_t_2" class="btn">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100 movie-card">
+                            <img src="https://m.media-amazon.com/images/M/MV5BNGE0YTVjNzUtNzJjOS00NGNlLTgxMzctZTY4YTE1Y2Y1ZTU4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" class="card-img-top" alt="Avengers" />
+                            <div class="card-body">
+                                <h5 class="card-title">The Avengers (2012)</h5>
+                                <p class="card-text text-secondary small">Tony joins Earth's Mightiest Heroes to stop the Chitauri invasion.</p>
+                                <a href="https://www.imdb.com/title/tt0848228/?ref_=ls_t_3" class="btn">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100 movie-card">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMjIzMzAzMjQyM15BMl5BanBnXkFtZTcwNzM2NjcyOQ@@._V1_FMjpg_UX1000_.jpg" class="card-img-top" alt="Iron Man 3" />
+                            <div class="card-body">
+                                <h5 class="card-title">Iron Man 3 (2013)</h5>
+                                <p class="card-text text-secondary small">Tony must protect his world without his primary armors.</p>
+                                <a href="https://www.imdb.com/title/tt1300854/?ref_=ls_t_4" class="btn">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100 movie-card">
+                            <img src="https://m.media-amazon.com/images/M/MV5BODBhYTg1NGQtNGVmNS00ZTdiLThjYTYtZDFkNzRiNTZmNDZjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" class="card-img-top" alt="Age of Ultron" />
+                            <div class="card-body">
+                                <h5 class="card-title">Avengers : Age of Ultron (2015)</h5>
+                                <p class="card-text text-secondary small">Tony accidentally creates a global threat while trying to protect it.</p>
+                                <a href="https://www.imdb.com/title/tt2395427/?ref_=ls_t_5" class="btn">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100 movie-card">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMjQ0MTgyNjAxMV5BMl5BanBnXkFtZTgwNjUzMDkyODE@._V1_FMjpg_UX1000_.jpg" class="card-img-top" alt="Civil War" />
+                            <div class="card-body">
+                                <h5 class="card-title">Captain America : Civil War (2016)</h5>
+                                <p class="card-text text-secondary small">Conflict splits the Avengers over government oversight.</p>
+                                <a href="https://www.imdb.com/title/tt3498820/?ref_=ls_t_6" class="btn">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100 movie-card">
+                            <img src="https://m.media-amazon.com/images/M/MV5BODY2MTAzOTQ4M15BMl5BanBnXkFtZTgwNzg5MTE0MjI@._V1_.jpg" class="card-img-top" alt="Homecoming" />
+                            <div class="card-body">
+                                <h5 class="card-title">Spiderman : Homecoming (2017)</h5>
+                                <p class="card-text text-secondary small">Tony acts as a mentor to Peter Parker.</p>
+                                <a href="https://www.imdb.com/title/tt2250912/?ref_=ls_t_7" class="btn">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100 movie-card">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_FMjpg_UX1000_.jpg" class="card-img-top" alt="Infinity War" />
+                            <div class="card-body">
+                                <h5 class="card-title">Avengers : Infinity War (2018)</h5>
+                                <p class="card-text text-secondary small">Tony takes the fight to Titan to stop Thanos.</p>
+                                <a href="https://www.imdb.com/title/tt4154756/?ref_=ls_t_8" class="btn">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100 movie-card">
+                            <img src="https://preview.redd.it/movies-that-makes-me-cry-v0-g74l6x2i7byd1.jpg?width=640&crop=smart&auto=webp&s=e2618047847836bd3b9a1f1d9594a62e280a9b16" class="card-img-top" alt="Endgame" />
+                            <div class="card-body">
+                                <h5 class="card-title">Avengers : Endgame (2019)</h5>
+                                <p class="card-text text-secondary small">Tony makes the ultimate sacrifice to restore the universe.</p>
+                                <a href="https://www.imdb.com/title/tt4154796/?ref_=ls_t_9" class="btn">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <br id="robert" />
+            <hr class="full-width-hr border border-light" />
+
+            <section>
+                <div class="container-actor my-5">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h1 class="robert-header">Robert Downey Jr.</h1>
+                            <h3>Born : April 4, 1965 (age 61 years)</h3>
+                            <h3>Upcoming Movies : <b>Avengers : Doomsday, Avengers : Secret Wars</b></h3>
+                            <h3>Height : 1.73m (5 Foot 8 )</h3>
+                            <h3 class="spouse-info">Spouse : <a href="https://www.google.com/search?q=susan+downey">Susan Downey (Married on the year 2005)</a></h3>
+                            <h3>Son : Exton Elias Downey and Indio Falconer Downey</h3>
+                            <h3>Daughter : Avri Roel Downey</h3>
+                            <h3>Social Media :</h3>
+                            <div class="d-flex gap-4 display-3">
+                                <a href="https://www.instagram.com/robertdowneyjr"><i class="bi bi-instagram"></i></a>
+                                <a href="https://www.facebook.com/robertdowneyjr"><i class="bi bi-facebook"></i></a>
+                                <a href="https://twitter.com/RobertDowneyJr"><i class="bi bi-twitter-x"></i></a>
+                            </div>
+                            <p class="fs-5 mt-3">
+                                Robert Downey Jr. is an American actor and producer who has become one of the most iconic figures in Hollywood. He is best known globally for his role as Tony Stark / Iron Man in the Marvel Cinematic Universe, a role he played from 2008 to 2019. Robert Downey Jr.’s
+                                past is often cited as one of the most significant turnaround stories in Hollywood history. Before he became the face of the MCU, he went through a very public and dark period involving substance abuse and legal trouble.
+                            </p>
+                            <a href="https://en.wikipedia.org/wiki/Robert_Downey_Jr." class="fs-3">Wikipedia →</a>
+                            <br />
+                            <a href="https://youtube.com/shorts/xWRrPE7KgBw?si=tqduL93hp5rjPO0e" class="fs-3">Youtube Short about his past crime →</a>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card bg-dark text-white border-secondary">
+                                <img src="https://i.pinimg.com/originals/d6/80/60/d680601f7360f472c388090ce1b76c43.gif" class="card-img-top" alt="Robert Downey Jr." />
+                                <div class="card-body">
+                                    <h5 class="card-title">Robert Downey Jr.</h5>
+                                    <p class="card-text small text-secondary">American actor</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <section id="contact" class="container my-5">
+            <style></style>
+            <h1 class="text-center py-4">Contact Us</h1>
+            <div class="container">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter Your Name" />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="You@example.com" />
+                </div>
+
+                <div class="form-group">
+                    <label for="message" class="form-group">Message:</label>
+                    <textarea class="form-control" id="message" rows="4" placeholder="Give Your Suggestion"></textarea>
+                    <div class="text-center mt-3">
+                        <button class="btn px-4">Send Message</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="py-4 mt-auto bg-dark border-top border-secondary">
+            <div class="container text-center">
+                <p class="m-0 text-white">&copy; 2026 TechVision. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
